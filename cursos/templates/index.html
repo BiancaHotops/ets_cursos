@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+   <!-- ##### Course Area Start ##### -->
+   <section class="course-area">
+    <div class="container">
+        <div class="row">
+        {% if cursos %}
+            {% for curso in cursos %}
+           
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-course-area mb-30">
+                        <img src="{% static 'img/bg-img/foto_aprendiz.png' %}" alt="">
+                        <div class="course-content">
+                            <a href="{% url 'curso' %}">
+                                <h5>{{curso.nome_curso_bosch}}</h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+            {% endif %}
+
+    </section>
+    <!-- ##### Best Receipe Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between">
+                    <!-- Footer Social Info -->
+                    <div class="footer-social-info text-right">
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </div>
+                    <!-- Footer Logo -->
+                    <div class="footer-logo">
+                        <a href="{% url 'index'%}"><img src="{% static 'img/core-img/logo.png' %}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+    {% endblock %}
+
+    
